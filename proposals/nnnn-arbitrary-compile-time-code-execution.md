@@ -13,11 +13,13 @@ Swift-evolution thread: [link to the discussion thread for that proposal](https:
 
 ## Motivation
 
-It is often necessary to execute code at build time. This is commonly handled through the use of build scripts (such as Xcode's "Build Phases"), but there's no reason why that code should be considered a special case. Swift developers could benefit from executing code at build time to perform
+It is often necessary to execute code at build time. This is commonly handled through the use of build scripts (such as Xcode's "Build Phases"), but there's no reason why that code should be considered a special case. Swift developers could benefit from executing code at build time to perform tasks, and even sharing code between their build environment and runtime environment.
+
+One practical example is generating lookup tables. The data that makes up these tables may be relatively expensive to compute. By generating these lookup tables at compile-time, 
 
 ## Proposed solution
 
-Jai, an experimental programming language designed for game development, uses the octothorpe-prefixed '#run' syntax (as described [here](https://sites.google.com/site/jailanguageprimer/#TOC-Arbitrary-Compile-Time-Code-Execution) which matches nicely with Swift's special expression syntax for the following:
+Jai, an experimental programming language designed for game development, uses the octothorpe-prefixed `#run` syntax (as described [here](https://sites.google.com/site/jailanguageprimer/#TOC-Arbitrary-Compile-Time-Code-Execution) which matches nicely with Swift's special expression syntax for the following:
 * `#available`
 * [SE-0022](https://github.com/apple/swift-evolution/blob/master/proposals/0022-objc-selectors.md)'s `#selector`
 * [SE-0028](https://github.com/apple/swift-evolution/blob/master/proposals/0028-modernizing-debug-identifiers.md)'s `#file`, `#line`, `#column`, `#function`, `#dsohandle`
@@ -45,7 +47,7 @@ reasonably implement the feature.
 
 ## Impact on existing code
 
-This is a new feature which is not expected to impact existing code. No alternatives exist in the current Swift API which should be considered for replacement or deprecation.
+This is a purely additive feature which is not expected to impact existing code. No alternatives exist in the current Swift API which should be considered for replacement or deprecation.
 
 ## Alternatives considered
 
