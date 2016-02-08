@@ -38,12 +38,7 @@ At compile-time, `myFunction` is evaluated, and the result is assigned to `someV
 
 ## Detailed design
 
-Describe the design of the solution in detail. If it involves new
-syntax in the language, show the additions and changes to the Swift
-grammar. If it's a new API, show the full API and its documentation
-comments detailing what it does. The detail in this section should be
-sufficient for someone who is *not* one of the authors to be able to
-reasonably implement the feature.
+_pending discussion on swift-evolution_
 
 ## Impact on existing code
 
