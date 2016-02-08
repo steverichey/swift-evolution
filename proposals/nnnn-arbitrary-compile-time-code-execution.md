@@ -1,4 +1,4 @@
-# Feature name
+# Allow arbitrary compile-time code execution
 
 * Proposal: [SE-NNNN]()
 * Author(s): [Steve Richey](https://github.com/steverichey)
