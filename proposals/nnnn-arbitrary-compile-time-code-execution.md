@@ -17,6 +17,8 @@ It is often necessary to execute code at build time. This is commonly handled th
 
 ## Proposed solution
 
+Jai, an experimental programming language designed for game development, uses the '#run' syntax (as described [here](https://sites.google.com/site/jailanguageprimer/#TOC-Arbitrary-Compile-Time-Code-Execution) which matches nicely with Swift's syntax:
+
 ```swift
 let value = #run myFunction()
 ```
