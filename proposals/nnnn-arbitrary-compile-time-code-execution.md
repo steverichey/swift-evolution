@@ -17,11 +17,22 @@ It is often necessary to execute code at build time. This is commonly handled th
 
 ## Proposed solution
 
-Jai, an experimental programming language designed for game development, uses the '#run' syntax (as described [here](https://sites.google.com/site/jailanguageprimer/#TOC-Arbitrary-Compile-Time-Code-Execution) which matches nicely with Swift's syntax:
+Jai, an experimental programming language designed for game development, uses the octothorpe-prefixed '#run' syntax (as described [here](https://sites.google.com/site/jailanguageprimer/#TOC-Arbitrary-Compile-Time-Code-Execution) which matches nicely with Swift's special expression syntax for the following:
+* `#available`
+* [SE-0022](https://github.com/apple/swift-evolution/blob/master/proposals/0022-objc-selectors.md)'s `#selector`
+* [SE-0028](https://github.com/apple/swift-evolution/blob/master/proposals/0028-modernizing-debug-identifiers.md)'s `#file`, `#line`, `#column`, `#function`, `#dsohandle`
+
+An example:
 
 ```swift
-let value = #run myFunction()
+func myFuction() -> String {
+  return "foo"
+}
+
+let someValue = #run myFunction()
 ```
+
+At compile-time, `myFunction` is evaluated, and the result is assigned to `someValue`. At run-time, `someValue` is a `String` with the value `"foo"`.
 
 ## Detailed design
 
@@ -34,9 +45,8 @@ reasonably implement the feature.
 
 ## Impact on existing code
 
-This is a new feature which is not expected to impact existing code.
+This is a new feature which is not expected to impact existing code. No alternatives exist in the current Swift API which should be considered for replacement or deprecation.
 
 ## Alternatives considered
 
-Describe alternative approaches to addressing the same problem, and
-why you chose this approach instead.
+_pending discussion on swift-evolution_
