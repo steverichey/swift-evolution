@@ -34,11 +34,7 @@ reasonably implement the feature.
 
 ## Impact on existing code
 
-Describe the impact this change will have on existing code. Will some
-Swift applications stop compiling due to this change? Will applications still
-compile but produce different behavior than they used to? Is it
-possible to migrate existing Swift code to use a new feature or API
-automatically?
+This is a new feature which is not expected to impact existing code.
 
 ## Alternatives considered
 
