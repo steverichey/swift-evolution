@@ -86,4 +86,4 @@ let myValue = #( compileTimeFunction() )
 
 In the proposed solution, [TODO]. (Thanks for Joe Groff for referencing Metalua and providing the example syntax).
 
-Another issue pertains to external modules. At compile-time, it may be difficult or impossible to detect whether or not we need to reevaluate the result of a `#run` call. This may require the developer to manually clean their build products to ensure that the result is recomputed. [TODO: how to fix] (Thanks to Wallacy for pointing out issues related to modules).
+Another issue pertains to external modules. At compile-time, it may be difficult or impossible to detect whether or not we need to reevaluate the result of a `#run` call. This may require the developer to manually clean their build products to ensure that the result is recomputed. [TODO: how to fix]. (Thanks to Wallacy for pointing out issues related to modules).
