@@ -19,7 +19,7 @@ One practical example is generating lookup tables. The data that makes up these 
 
 ## Proposed solution
 
-Jai, an experimental programming language designed for game development, uses the octothorpe-prefixed `#run` syntax (as described [here](https://sites.google.com/site/jailanguageprimer/#TOC-Arbitrary-Compile-Time-Code-Execution) which matches nicely with Swift's special expression syntax for the following:
+Jai, an experimental programming language designed for game development, uses the octothorpe-prefixed `#run` syntax (as described [here](https://sites.google.com/site/jailanguageprimer/#TOC-Arbitrary-Compile-Time-Code-Execution)) which matches nicely with Swift's special expression syntax for the following:
 * `#available`
 * [SE-0022](https://github.com/apple/swift-evolution/blob/master/proposals/0022-objc-selectors.md)'s `#selector`
 * [SE-0028](https://github.com/apple/swift-evolution/blob/master/proposals/0028-modernizing-debug-identifiers.md)'s `#file`, `#line`, `#column`, `#function`, `#dsohandle`
