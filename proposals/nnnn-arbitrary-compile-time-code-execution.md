@@ -62,7 +62,7 @@ To alleviate some of the issues related to serialization, compile time dependenc
 @compile_time func myFunction(foo: String) -> Expr { ... }
 ```
 
-This allows us to call functions at compile time, with intelligent compiler warnings if we attempt to call a function which is not marked as `@compile_time` (or whatever similar attribute term is chosen). [TODO: further discuss]. (Thanks to Haravikk for recommending the attribute concept).
+This allows us to call functions at compile time, with intelligent compiler warnings if we attempt to call a function which is not marked as `@compile_time` (or whatever similar attribute term is chosen). [TODO: further discuss]. (Thanks to Haravikk for recommending the attribute concept, and Matt Whiteside for backing it).
 
 In some cases, the compiler may be able to pre-optimize our code. A function that generates powers of two, which is only called once, could be inlined by the compiler. In many cases, this would obviate the need for a `#run` command or similar. However, I don't believe that the functionality offered by this proposal is limited to optimizing code. This proposal is intended to benefit those who are doing  time-intensive processes that they'd like to "bake" into the generated executable, while also allowing for compile-time functionality like updating build numbers, application icons, and so on. If we avoid `#run` in favor of compiler optimizations, we avoid a whole class of functionality while also creating uncertainties about the cost of running our code at runtime. The explicitness of the proposed call helps to alleviate that uncertainty. (Thanks to Haravikk for pointing out issues pertaining to compiler optimizations).
 
