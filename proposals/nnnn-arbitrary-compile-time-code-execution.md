@@ -9,7 +9,7 @@
 
 Allow the execution of arbitrary Swift code at compile-time to handle lengthy one-time data generation, or tasks that the developer would like to automate to run every time the application is compiled.
 
-Swift-evolution thread: [link to the discussion thread for that proposal](https://lists.swift.org/pipermail/swift-evolution)
+Swift-evolution thread: [Proposal: allow arbitrary compile-time code	execution](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160201/009353.html)
 
 ## Motivation
 
