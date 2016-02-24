@@ -52,9 +52,9 @@ func bar() -> String {
 }
 ```
 
-In this case, [TODO]. (Thanks to Adrian Kashivskyy for pointing this out on the `swift-evolution` mailing list).
+In this case, [TODO]. (Thanks to [Adrian Kashivskyy](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160208/009363.html) for pointing this out on the `swift-evolution` mailing list).
 
-This does represent an issue for types that cannot be serialized. [TODO: discussion]. (Thanks to Félix Cloutier for pointing this out).
+This does represent an issue for types that cannot be serialized. [TODO: discussion]. (Thanks to [Félix Cloutier](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160201/009355.html) for pointing this out).
 
 To alleviate some of the issues related to serialization, compile time dependencies, and so on, we may want to introduce an attribute to flag a function as compile-time available:
 
@@ -62,9 +62,9 @@ To alleviate some of the issues related to serialization, compile time dependenc
 @compile_time func myFunction(foo: String) -> Expr { ... }
 ```
 
-This allows us to call functions at compile time, with intelligent compiler warnings if we attempt to call a function which is not marked as `@compile_time` (or whatever similar attribute term is chosen). [TODO: further discuss]. (Thanks to Haravikk for recommending the attribute concept, and Matt Whiteside for backing it).
+This allows us to call functions at compile time, with intelligent compiler warnings if we attempt to call a function which is not marked as `@compile_time` (or whatever similar attribute term is chosen). [TODO: further discuss]. (Thanks to [Haravikk](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160208/009489.html) for recommending the attribute concept, and [Matt Whiteside](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160208/009959.html) for backing it).
 
-In some cases, the compiler may be able to pre-optimize our code. A function that generates powers of two, which is only called once, could be inlined by the compiler. In many cases, this would obviate the need for a `#run` command or similar. However, I don't believe that the functionality offered by this proposal is limited to optimizing code. This proposal is intended to benefit those who are doing  time-intensive processes that they'd like to "bake" into the generated executable, while also allowing for compile-time functionality like updating build numbers, application icons, and so on. If we avoid `#run` in favor of compiler optimizations, we avoid a whole class of functionality while also creating uncertainties about the cost of running our code at runtime. The explicitness of the proposed call helps to alleviate that uncertainty. (Thanks to Haravikk for pointing out issues pertaining to compiler optimizations).
+In some cases, the compiler may be able to pre-optimize our code. A function that generates powers of two, which is only called once, could be inlined by the compiler. In many cases, this would obviate the need for a `#run` command or similar. However, I don't believe that the functionality offered by this proposal is limited to optimizing code. This proposal is intended to benefit those who are doing  time-intensive processes that they'd like to "bake" into the generated executable, while also allowing for compile-time functionality like updating build numbers, application icons, and so on. If we avoid `#run` in favor of compiler optimizations, we avoid a whole class of functionality while also creating uncertainties about the cost of running our code at runtime. The explicitness of the proposed call helps to alleviate that uncertainty. (Thanks to [Haravikk](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160208/009364.html) for pointing out issues pertaining to compiler optimizations).
 
 ## Impact on existing code
 
@@ -84,6 +84,6 @@ A variant of the [Lua](http://www.lua.org/) programming language, [Metalua](http
 let myValue = #( compileTimeFunction() )
 ```
 
-In the proposed solution, [TODO]. (Thanks for Joe Groff for referencing Metalua and providing the example syntax).
+In the proposed solution, [TODO]. (Thanks for [Joe Groff](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160208/009404.html) for referencing Metalua and providing the example syntax).
 
-Another issue pertains to external modules. At compile-time, it may be difficult or impossible to detect whether or not we need to reevaluate the result of a `#run` call. This may require the developer to manually clean their build products to ensure that the result is recomputed. [TODO: how to fix]. (Thanks to Wallacy for pointing out issues related to modules).
+Another issue pertains to external modules. At compile-time, it may be difficult or impossible to detect whether or not we need to reevaluate the result of a `#run` call. This may require the developer to manually clean their build products to ensure that the result is recomputed. [TODO: how to fix]. (Thanks to [Wallacy](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160208/009372.html) for pointing out issues related to modules).
